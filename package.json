@@ -1,0 +1,43 @@
+{
+    "name": "Beardude_2017",
+    "author": {
+        "name": "Azai Chan",
+        "email": "azaitw@github.com"
+    },
+    "version": "0.0.1",
+    "description": "Beardude 2017 Public site",
+    "homepage": "",
+    "keywords": [],
+    "main": "server.js",
+    "scripts": {
+        "build": "mkdir -p ./temp; gulp build; rm -rf ./temp",
+        "build-dev": "mkdir -p ./temp; gulp build-dev; rm -rf ./temp",
+        "image": "gulp images-min",
+        "lint": "gulp lint"
+    },
+    "dependencies": {
+        "gulp": "3.8.10",
+        "gulp-base64": "0.1.2",
+        "gulp-concat": "*",
+        "gulp-inline-source": "*",
+        "gulp-jshint": "*",
+        "gulp-less": "3.0.1",
+        "gulp-clean-css": "2.3.2",
+        "gulp-htmlmin": "3.0.0",
+        "gulp-uglify": "*",
+        "jshint": "*"
+    },
+    "repository": {
+    "type": "git",
+    "url": "git://github.com:azaitw/beardude_2017.git"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": ""
+        }
+    ],
+    "engines": {
+        "node": ">= 0.10.0"
+    }
+}
