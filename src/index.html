@@ -28,18 +28,21 @@
     var tube = document.getElementById('tube')
     var bde = document.getElementById('bde')
     setTubeSize = function (tube) {
-      var width = (screen.width > 800) ? 800 : screen.width
-      var height = Math.floor(width / 16 * 9)
-      tube.width = width
-      tube.height = height
+      var width = (screen.width > 800) ? 800 : screen.width; var height = Math.floor(width / 16 * 9);
+      tube.width = width; tube.height = height;
     }
     var returnBdeHeight = function (bde) { return screen.height - bde.offsetTop - 10 }
+    setTubeSize(tube); bde.height = returnBdeHeight(bde);
+    window.addEventListener('orientationchange', function () { setTubeSize(tube); bde.height = returnBdeHeight(bde); })
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    setTubeSize(tube)
-    bde.height = returnBdeHeight(bde)
-    window.addEventListener('orientationchange', function () {
-      setTubeSize(tube)
-      bde.height = returnBdeHeight(bde)
-    })
+    ga('create', 'UA-104754536-1', 'auto');
+    ga('send', 'pageview');
+
   </script>
 </html>
