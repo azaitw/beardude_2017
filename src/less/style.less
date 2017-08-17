@@ -1,20 +1,21 @@
 @import "reset.less";
 @logoW: 120px;
 @logoH: 84px;
-
 html {
   background: #000;
 }
 .wrap {
+@ratio: 0.4;
   background: #000 url("./images/logo.png") no-repeat top left;
-  background-size: @logoW @logoH;
-  padding: @logoH 0 0 0;
+  background-size: @logoW * @ratio @logoH * @ratio;
+  padding: @logoH * @ratio 0 0 0;
+  line-height: 0;
 }
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
-@ratio: 0.7;
+@ratio: 0.4;
   .wrap {
     background-size: @logoW * @ratio @logoH * @ratio;
-    padding: 59px 0 0 0;
+    padding: @logoH * @ratio 0 0 0;
   }
 }
