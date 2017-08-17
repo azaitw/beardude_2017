@@ -27,13 +27,18 @@
   <script>
     var tube = document.getElementById('tube')
     var bde = document.getElementById('bde')
-    var returnTubeHeight = function () { return Math.floor(screen.width / 16 * 9) }
+    setTubeSize = function (tube) {
+      var width = (screen.width > 800) ? 800 : screen.width
+      var height = Math.floor(width / 16 * 9)
+      tube.width = width
+      tube.height = height
+    }
     var returnBdeHeight = function (bde) { return screen.height - bde.offsetTop - 10 }
 
-    tube.height = returnTubeHeight()
+    setTubeSize(tube)
     bde.height = returnBdeHeight(bde)
     window.addEventListener('orientationchange', function () {
-      tube.height = returnTubeHeight()
+      setTubeSize(tube)
       bde.height = returnBdeHeight(bde)
     })
   </script>
