@@ -11,6 +11,7 @@
     "main": "server.js",
     "scripts": {
         "build": "mkdir -p ./temp; gulp build; rm -rf ./temp",
+        "deploy": "./deploy.sh",
         "build-dev": "mkdir -p ./temp; gulp build-dev; rm -rf ./temp",
         "image": "gulp images-min",
         "lint": "gulp lint"
