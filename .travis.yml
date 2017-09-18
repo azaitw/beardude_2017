@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - "iojs"
   - "8"
 
 cache:
@@ -11,11 +10,6 @@ install:
   - mkdir -p dist
   - npm install
 
-before_script:
-  - git remote set-url origin "https://${GITHUB_TOKEN}@github.com/azaitw/beardude_2017.git"
-  - git config --global user.email "azai.tw@gmail.com"
-  - git config --global user.name "Travis-CI"
-
 script:
   - gulp build
 
@@ -23,5 +17,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: dist
+  repo: git@github.com:azaitw/azaitw.github.io.git
   on:
     branch: master
