@@ -84,7 +84,7 @@ gulp.task('build', ['css', 'images'], function () {
         swallowErrors: true
     };
     return gulp.src('./src/*.html')
-    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest(outputPath))
     .pipe(inlinesource(optsInline))
     .pipe(minifyHTML(optsHtml))
     .pipe(gulp.dest(outputPath));
