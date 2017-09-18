@@ -3,6 +3,7 @@
 //var async = require('async');
 var base64 = require('gulp-base64');
 var concat = require('gulp-concat');
+var deploy = require('gulp-gh-pages');
 var ejs = require('gulp-ejs');
 var fs = require('fs');
 var gulp = require('gulp');
@@ -84,15 +85,20 @@ gulp.task('build', ['css', 'images'], function () {
         swallowErrors: true
     };
     return gulp.src('./src/*.html')
-    .pipe(gulp.dest('./temp'))
+    .pipe(gulp.dest('./dist'))
     .pipe(inlinesource(optsInline))
     .pipe(minifyHTML(optsHtml))
     .pipe(gulp.dest(outputPath));
 });
 
 // Validate all JS files
-gulp.task('lint', function() {
+gulp.task('lint', function () {
     return gulp.src('./src/js/*.js')
     .pipe(lint())
     .pipe(lint.reporter('default', { verbose: true }));
 });
+
+gulp.task('deploy', ['build'], function () {
+    return gulp.src('./dist/**/*')
+    .pipe(deploy())
+})

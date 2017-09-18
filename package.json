@@ -10,9 +10,9 @@
     "keywords": [],
     "main": "server.js",
     "scripts": {
-        "build": "mkdir -p ./temp; gulp build; rm -rf ./temp",
+        "build": "mkdir -p ./dist; gulp build; rm -rf ./dist",
         "deploy": "./deploy.sh",
-        "build-dev": "mkdir -p ./temp; gulp build-dev; rm -rf ./temp",
+        "build-dev": "mkdir -p ./dist; gulp build-dev; rm -rf ./dist",
         "image": "gulp images-min",
         "lint": "gulp lint"
     },
@@ -20,6 +20,7 @@
         "gulp": "3.8.10",
         "gulp-base64": "0.1.2",
         "gulp-concat": "*",
+        "gulp-gh-pages": "0.5.4",
         "gulp-inline-source": "*",
         "gulp-jshint": "*",
         "gulp-less": "3.0.1",
