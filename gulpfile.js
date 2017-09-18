@@ -4,7 +4,6 @@
 var base64 = require('gulp-base64');
 var concat = require('gulp-concat');
 var deploy = require('gulp-gh-pages');
-var ejs = require('gulp-ejs');
 var fs = require('fs');
 var gulp = require('gulp');
 var inlinesource = require('gulp-inline-source');
