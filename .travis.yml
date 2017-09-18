@@ -8,6 +8,7 @@ cache:
     - "node_modules"
 
 install:
+  - mkdir -p dist
   - npm install
 
 before_script:

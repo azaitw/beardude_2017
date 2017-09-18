@@ -30,8 +30,8 @@
         "jshint": "*"
     },
     "repository": {
-    "type": "git",
-    "url": "git://github.com:azaitw/beardude_2017.git"
+        "type": "git",
+        "url": "git://github.com:azaitw/beardude_2017.git"
     },
     "licenses": [
         {

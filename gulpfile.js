@@ -20,7 +20,7 @@ var pages = [
 var base64Opts = {
     extensions: ['png']
 };
-var outputPath = '../azaitw.github.io';
+var outputPath = 'dist';
 
 gulp.task('images', function () {
     return gulp.src('./src/images/**/*')
@@ -42,7 +42,7 @@ gulp.task('css', function() {
     .pipe(concat('production.css'))
     .pipe(base64(base64Opts))
     .pipe(minifyCSS(opts))
-    .pipe(gulp.dest('./temp'));
+    .pipe(gulp.dest(outputPath));
 });
 
 // Concat and compress CSS files in src/data/css, and generate build/production.css
